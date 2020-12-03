@@ -53,3 +53,4 @@ There is an alternative form of elliptic curves called _Montgomery_ curves that 
 
 ## Galois Fields and Elliptic Curves
 
+---
