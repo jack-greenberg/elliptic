@@ -10,6 +10,14 @@ MathJax = {
 };
 </script>
 
+<script type="text/javascript">
+Reveal.addEventListener('slidechanged', function(event) {
+    try {
+        document.querySelector(".slide-background.future video")[0].currentTime = 0;
+    } catch {}
+});
+</script>
+
 <script type="text/javascript" id="MathJax-script" async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
 </script>
