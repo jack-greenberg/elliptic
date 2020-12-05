@@ -19,6 +19,8 @@ Jack Greenberg, Oscar De La Garza, Nabih Estefan
 
 Use your left and right arrows to nagivate!
 
+Press the `?` key to see the shortcuts.
+
 ---
 
 {{% section %}}

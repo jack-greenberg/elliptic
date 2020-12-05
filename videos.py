@@ -33,8 +33,6 @@ class CurveAnimation(GraphScene):
             Write(fn_text)
         )
 
-        self.wait(1)
-
         # Curve 1
         fn1 = self.curve(-1, 5, 1.90416).set_color(BLUE_E)
         fn1_text = TextMobject("$y^2 = x^3 - x + 5$").scale(.75).move_to(3*UL+2*L).set_color(BLACK)
@@ -47,8 +45,6 @@ class CurveAnimation(GraphScene):
             Write(b1),
             Transform(fn_text, fn1_text),
         )
-
-        self.wait(1)
 
         # Curve 2
         fn2 = self.curve(0, 0, 0).set_color(BLUE_E)
@@ -73,8 +69,6 @@ class CurveAnimation(GraphScene):
                 fn2_text,
             )
         )
-
-        self.wait(1)
 
         # Curve 3
         fn3 = self.curve(-2, 2, 1.769).set_color(BLUE_E)
@@ -188,6 +182,8 @@ class PointAddition(GraphScene):
 
         fn_text = TextMobject("$y^2 = x^3 - 2x + 2$").scale(.75).set_color(BLACK).move_to(3*UL+2*L)
 
+        eqn = TextMobject("$P + Q = R$").scale(0.75).next_to(fn_text, DOWN).set_fill(BLACK).set_stroke(BLACK).set_color(BLACK)
+
         fn = self.curve(-2, 2, 1.769).set_color(BLUE_E)
 
         gp = fn.get_point_from_function
@@ -206,8 +202,6 @@ class PointAddition(GraphScene):
             ShowCreation(fn),
         )
 
-        #  self.wait(1)
-
         line = Line()
         line.set_angle(angle_of_vector(gp(T2) - gp(T1)))
         line.move_to(gp(T1))
@@ -220,27 +214,23 @@ class PointAddition(GraphScene):
             ShowCreation(P),
             ShowCreation(Q),
             Write(P_label),
-            Write(Q_label)
+            Write(Q_label),
+            Write(eqn)
         )
-
-        #  self.wait(1)
 
         point1, point2 = self.point_to_coords(gp(T1)), self.point_to_coords(gp(T2))
 
         negR = Dot(color=RED_E)
-
         m = (point2[1] - point1[1]) / (point2[0] - point1[0])
-
         point3 = [m**2 - point1[0] - point2[0]]
-
         point3.append(point1[1] + m*(point3[0] - point1[0]))
-
         negR.move_to(self.coords_to_point(point3[0], point3[1]))
         negR_label = TextMobject("$-R$", color=RED_E).scale(0.75).next_to(negR, 0.707*DR).set_fill(RED_E).set_color(RED_E).set_stroke(color=RED_E, width=0)
 
-        self.play(ShowCreation(negR), Write(negR_label))
-
-        #  self.wait(1)
+        self.play(
+            ShowCreation(negR),
+            Write(negR_label)
+        )
 
         vert_line = DashedLine(
             self.coords_to_point(point3[0], point3[1]),
@@ -252,13 +242,13 @@ class PointAddition(GraphScene):
         R.move_to(self.coords_to_point(point3[0], -1*point3[1]))
         R_label = TextMobject("$R$", color=RED_E).scale(0.75).next_to(R, 0.707*UR).set_fill(RED_E).set_color(RED_E).set_stroke(color=RED_E, width=0)
 
-        eqn = TextMobject("$P + Q = R$").scale(0.75).move_to(DOWN+5*RIGHT).set_fill(BLACK).set_stroke(BLACK).set_color(BLACK)
-
         self.play(
             ShowCreation(vert_line),
+            run_time=.8
+        )
+        self.play(
             ShowCreation(R),
-            Write(R_label),
-            Write(eqn)
+            Write(R_label)
         )
 
 
@@ -309,8 +299,9 @@ class PointDouble(GraphScene):
         line.set_color(GREEN_C)
         line.set_opacity(0.8)
 
-        self.add(fn_text, fn, P, P_label, Q, Q_label, line)
+        eqn = TextMobject("$P + P = 2P = R$").scale(0.75).next_to(fn_text, DOWN).set_fill(BLACK).set_stroke(BLACK).set_color(BLACK)
 
+        self.add(fn_text, fn, P, P_label, Q, Q_label, line)
         self.wait(1)
 
         self.play(
@@ -325,11 +316,9 @@ class PointDouble(GraphScene):
                 labelp=.707*UL,
                 label2=Q_label,
                 labelp2=0.707*UR
-            )
+            ),
+            Write(eqn)
         )
-
-
-        #  self.wait(1)
 
         point = self.point_to_coords(gp(T1+.75))
 
@@ -342,9 +331,7 @@ class PointDouble(GraphScene):
         negR.move_to(self.coords_to_point(point3[0], point3[1]))
         negR_label = TextMobject("$-R$", color=RED_E).scale(0.75).next_to(negR, 0.707*DR).set_fill(RED_E).set_color(RED_E).set_stroke(color=RED_E, width=0)
 
-        #  self.play(ShowCreation(negR), Write(negR_label))
-
-        #  self.wait(1)
+        self.play(ShowCreation(negR), Write(negR_label))
 
         vert_line = DashedLine(
             self.coords_to_point(point3[0], point3[1]),
@@ -356,15 +343,14 @@ class PointDouble(GraphScene):
         R.move_to(self.coords_to_point(point3[0], -1*point3[1]))
         R_label = TextMobject("$R$", color=RED_E).scale(0.75).next_to(R, 0.707*UR).set_fill(RED_E).set_color(RED_E).set_stroke(color=RED_E, width=0)
 
-        eqn = TextMobject("$P + P = 2P = R$").scale(0.75).move_to(DOWN+5*RIGHT).set_fill(BLACK).set_stroke(BLACK).set_color(BLACK)
+        self.play(
+            ShowCreation(vert_line),
+            run_time=.8
+        )
 
         self.play(
-            ShowCreation(negR),
-            Write(negR_label),
-            ShowCreation(vert_line),
             ShowCreation(R),
             Write(R_label),
-            Write(eqn)
         )
 
 
@@ -469,10 +455,6 @@ class FiniteFieldCurve(GraphScene):
             ShowCreation(R),
             Write(R_label)
         )
-
-        eqn = TextMobject("$P + P = 2P = R$").scale(0.75).move_to(DOWN+5*RIGHT).set_fill(BLACK).set_stroke(BLACK).set_color(BLACK)
-
-        self.play(Write(eqn))
 
     def curve(self, a, b, c):
         """

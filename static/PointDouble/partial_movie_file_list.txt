@@ -1,3 +1,0 @@
-file 'file:/home/jgreenberg/projects/elliptic/media/videos/videos/1440p60/partial_movie_files/PointDouble/00000.mp4'
-file 'file:/home/jgreenberg/projects/elliptic/media/videos/videos/1440p60/partial_movie_files/PointDouble/00001.mp4'
-file 'file:/home/jgreenberg/projects/elliptic/media/videos/videos/1440p60/partial_movie_files/PointDouble/00002.mp4'

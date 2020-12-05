@@ -33,3 +33,9 @@ _These are some sources we found helpful along the way. Credit where credit is d
 
 - [Implementing Curve25519/X25519: A Tutorial on Elliptic Curve Cryptography &mdash; Martin Kleppmann](https://martin.kleppmann.com/papers/curve25519.pdf)
 - [Elliptic Curve Cryptograph: a gentle introduction &mdash; Andrea Corbellini](https://andrea.corbellini.name/2015/05/17/elliptic-curve-cryptography-a-gentle-introduction/)
+
+---
+
+# ↩️
+
+#### [Start over](#)

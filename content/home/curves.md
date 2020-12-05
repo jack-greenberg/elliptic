@@ -35,6 +35,18 @@ $$y^2 = x^3 + Ax^2 + x$$
     background-size="contain"
     style="margin: 1em;"
     transition="none"
+    background-transition="none"
+>}}
+
+---
+
+{{<slide
+    background-video="CurveAnimation/00001.mp4"
+    background-position="center"
+    background-size="contain"
+    style="margin: 1em;"
+    transition="none"
+    background-transition="none"
 >}}
 
 ---
@@ -45,26 +57,18 @@ $$y^2 = x^3 + Ax^2 + x$$
     background-size="contain"
     style="margin: 1em;"
     transition="none"
+    background-transition="none"
 >}}
 
 ---
 
 {{<slide
-    background-video="CurveAnimation/00004.mp4"
+    background-video="CurveAnimation/00003.mp4"
     background-position="center"
     background-size="contain"
     style="margin: 1em;"
     transition="none"
->}}
-
----
-
-{{<slide
-    background-video="CurveAnimation/00006.mp4"
-    background-position="center"
-    background-size="contain"
-    style="margin: 1em;"
-    transition="none"
+    background-transition="none"
 >}}
 
 ---
@@ -98,6 +102,7 @@ When adding two points together, we draw a straight line between the two points,
     background-size="contain"
     style="margin: 1em;"
     transition="none"
+    background-transition="none"
 >}}
 
 ---
@@ -108,6 +113,7 @@ When adding two points together, we draw a straight line between the two points,
     background-size="contain"
     style="margin: 1em;"
     transition="none"
+    background-transition="none"
 >}}
 
 ---
@@ -118,25 +124,18 @@ When adding two points together, we draw a straight line between the two points,
     background-size="contain"
     style="margin: 1em;"
     transition="none"
+    background-transition="none"
 >}}
 
 ---
 
 {{% section %}}
 
-{{<slide
-    background-video="PointAddition/00003.mp4"
-    background-position="center"
-    background-size="contain"
-    style="margin: 1em;"
-    transition="none"
->}}
-
----
-
 #### Addition, mathematically
 
 When adding two points, $P = (x_P, y_P)$ and $Q = (x_Q, y_Q)$, we write their sum as $P + Q = R = (x_R, y_R)$.
+
+🔽
 
 ---
 
@@ -164,7 +163,7 @@ This [Desmos graph](https://www.desmos.com/calculator/ialhd71we3) lets you play 
 
 ---
 
-{{% section %}}
+{{<slide transition="fade-in none">}}
 
 Now that we've seen addition, the next step is _multiplication_.
 
@@ -172,14 +171,11 @@ This doesn't mean multiplying two points together, rather, we mean _scalar multi
 
 ---
 
-{{% /section %}}
-
----
-
 {{<slide
     background-video="PointDouble/00000.mp4"
     background-position="center"
     background-size="contain"
+    background-transition="none"
     style="margin: 1em;"
     transition="none"
 >}}
@@ -191,18 +187,18 @@ This doesn't mean multiplying two points together, rather, we mean _scalar multi
     background-position="center"
     background-size="contain"
     style="margin: 1em;"
+    background-transition="none"
     transition="none"
 >}}
 
 ---
-
-{{% section %}}
 
 {{<slide
     background-video="PointDouble/00002.mp4"
     background-position="center"
     background-size="contain"
     style="margin: 1em;"
+    background-transition="none"
     transition="none"
 >}}
 
@@ -213,8 +209,6 @@ The method for determining the location of the doubled point is similar to the m
 $$\lambda = \frac{dy}{dx}\Bigr\rvert_{P} = \frac{3x_P^2 + A}{2y_P}$$
 
 The other two formulae are the same.
-
-{{% /section %}}
 
 ---
 

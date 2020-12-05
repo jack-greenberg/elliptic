@@ -13,8 +13,11 @@ MathJax = {
 <script type="text/javascript">
 Reveal.addEventListener('slidechanged', function(event) {
     try {
-        document.querySelector(".slide-background.future video")[0].currentTime = 0;
-    } catch {}
+        var video = document.querySelectorAll(".slide-background.future video, .slide-background.present video");
+        video.forEach(v => {
+            v.currentTime = 0;
+        });
+    } catch (TypeError) {}
 });
 </script>
 
