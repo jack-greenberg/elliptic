@@ -15,7 +15,6 @@ Jack Greenberg, Oscar De La Garza, Nabih Estefan
 
 ---
 
-
 ## How do I use this site?
 
 Use your left and right arrows to nagivate!

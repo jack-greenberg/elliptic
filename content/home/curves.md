@@ -2,9 +2,30 @@
 weight = 20
 +++
 
+{{% section %}}
+
 ## Elliptic Curves
 
-{{% fragment %}} $$y^2 = x^3 + Ax + B$$ {{% /fragment %}}
+$$y^2 = x^3 + Ax + B$$
+
+---
+
+### Montgomery and Weierstrass
+
+<br>
+
+The equations we'll be looking at are in _Weierstrass_ form:
+
+
+$$y^2 = x^3 + Ax + B$$
+
+<br>
+
+There is an alternative form of elliptic curves called _Montgomery_ curves that are of the form:
+
+$$y^2 = x^3 + Ax^2 + x$$
+
+{{% /section %}}
 
 ---
 
@@ -14,14 +35,6 @@ weight = 20
     background-size="contain"
     style="margin: 1em;"
 >}}
-
----
-
-There are two parameters that define elliptic curves:
-
-<br>
-
-$A$ &nbsp; and &nbsp; $B$
 
 ---
 
@@ -40,17 +53,38 @@ The equation of the curve is too big to show here.
 
 ---
 
-### Montgomery and Weierstrass
+## Point Addition
 
-The equations we've been looking at are in _Weierstrass_  form, that is: $y^2 = x^3 + Ax + B$.
+Remember that the set of points on our curve form a group, so any operation on two of those points must be on the curve.
 
-There is an alternative form of elliptic curves called _Montgomery_ curves that are of the form: $y^2 = x^3 + Ax^2 + x$.
-
-<br>
-<small>But we'll be focusing on Weierstrass curves today.</small>
+When adding, we draw a straight line between the two points, find the _third_ point at which they intersect, and then reflect that across the horizontal axis...
 
 ---
 
-## Galois Fields and Elliptic Curves
+{{<slide
+    background-video="PointAddition.mp4"
+    background-position="center"
+    background-size="contain"
+    style="margin: 1em;"
+>}}
 
 ---
+
+Now that we've seen addition, the next step is _multiplication_.
+
+This doesn't mean multiplying two points together, rather, we mean _scalar multiplication_, meaning adding a point to itself multiple times.
+
+---
+
+{{<slide
+    background-video="PointDouble.mp4"
+    background-position="center"
+    background-size="contain"
+    style="margin: 1em;"
+>}}
+
+---
+
+## Galois Fields
+
+The curves you've seen so are are defined over the plane of real numbers. So there are an infinite number of points that lie on the curve.
