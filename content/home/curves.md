@@ -129,6 +129,28 @@ When adding two points together, we draw a straight line between the two points,
 
 ---
 
+{{<slide
+    background-video="PointAddition/00003.mp4"
+    background-position="center"
+    background-size="contain"
+    style="margin: 1em;"
+    transition="none"
+    background-transition="none"
+>}}
+
+---
+
+{{<slide
+    background-video="PointAddition/00004.mp4"
+    background-position="center"
+    background-size="contain"
+    style="margin: 1em;"
+    transition="none"
+    background-transition="none"
+>}}
+
+---
+
 {{% section %}}
 
 #### Addition, mathematically
@@ -195,6 +217,28 @@ This doesn't mean multiplying two points together, rather, we mean _scalar multi
 
 {{<slide
     background-video="PointDouble/00002.mp4"
+    background-position="center"
+    background-size="contain"
+    style="margin: 1em;"
+    background-transition="none"
+    transition="none"
+>}}
+
+---
+
+{{<slide
+    background-video="PointDouble/00003.mp4"
+    background-position="center"
+    background-size="contain"
+    style="margin: 1em;"
+    background-transition="none"
+    transition="none"
+>}}
+
+---
+
+{{<slide
+    background-video="PointDouble/00004.mp4"
     background-position="center"
     background-size="contain"
     style="margin: 1em;"

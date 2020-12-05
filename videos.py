@@ -215,7 +215,7 @@ class PointAddition(GraphScene):
             ShowCreation(Q),
             Write(P_label),
             Write(Q_label),
-            Write(eqn)
+            Write(eqn),
         )
 
         point1, point2 = self.point_to_coords(gp(T1)), self.point_to_coords(gp(T2))
@@ -229,7 +229,8 @@ class PointAddition(GraphScene):
 
         self.play(
             ShowCreation(negR),
-            Write(negR_label)
+            Write(negR_label),
+            run_time=.8
         )
 
         vert_line = DashedLine(
@@ -244,11 +245,12 @@ class PointAddition(GraphScene):
 
         self.play(
             ShowCreation(vert_line),
-            run_time=.8
+            run_time=.7
         )
         self.play(
             ShowCreation(R),
-            Write(R_label)
+            Write(R_label),
+            run_time=.8
         )
 
 
