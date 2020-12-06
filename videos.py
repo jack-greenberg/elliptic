@@ -4,6 +4,7 @@ from manimlib.animation.indication import *
 from manimlib.animation.transform import *
 from manimlib.utils.space_ops import angle_of_vector
 import math
+import numpy as np
 import manimlib.constants as consts
 from fractions import Fraction
 
@@ -301,7 +302,7 @@ class PointDouble(GraphScene):
         line.set_color(GREEN_C)
         line.set_opacity(0.8)
 
-        eqn = TextMobject("$P + P = 2P = R$").scale(0.75).next_to(fn_text, DOWN).set_fill(BLACK).set_stroke(BLACK).set_color(BLACK)
+        eqn = TextMobject("$P + P = 2P$").scale(0.75).next_to(fn_text, DOWN).set_fill(BLACK).set_stroke(BLACK).set_color(BLACK)
 
         self.add(fn_text, fn, P, P_label, Q, Q_label, line)
         self.wait(1)
@@ -318,8 +319,7 @@ class PointDouble(GraphScene):
                 labelp=.707*UL,
                 label2=Q_label,
                 labelp2=0.707*UR
-            ),
-            Write(eqn)
+            )
         )
 
         point = self.point_to_coords(gp(T1+.75))
@@ -352,7 +352,72 @@ class PointDouble(GraphScene):
 
         self.play(
             ShowCreation(R),
+            Write(eqn),
             Write(R_label),
+        )
+
+        twoP = R
+        twoP_label = TextMobject("$2P$", color=BLACK).scale(0.75).next_to(twoP, 0.707*UR).set_fill(BLACK).set_color(BLACK).set_stroke(color=BLACK)
+
+        angle = angle_of_vector(
+            self.coords_to_point(point3[0], -1*point3[1]) - self.coords_to_point(point[0], point[1])
+        ) - line.get_angle()
+
+        P_label.next_to(P, .707*UR)
+
+        self.play(
+            FadeOut(negR),
+            FadeOut(negR_label),
+            FadeOut(vert_line),
+            Transform(
+                twoP,
+                twoP.set_color(BLACK),
+            ),
+            Transform(
+                R_label,
+                twoP_label,
+            ),
+            Rotate(line, angle),
+        )
+
+        negR = Dot(color=RED_E)
+
+        point3[1] = -1*point3[1]
+
+        m = (point3[1] - point[1]) / (point3[0] - point[0])
+        point4 = [m**2 - point[0] - point3[0]]
+        point4.append(point[1] + m*(point4[0] - point[0]))
+
+        negR.move_to(self.coords_to_point(point4[0], point4[1]))
+        negR_label = TextMobject("$-3P$", color=RED_E).scale(0.75).next_to(negR, RIGHT).set_fill(RED_E).set_color(RED_E).set_stroke(color=RED_E, width=0)
+
+        self.play(ShowCreation(negR), Write(negR_label))
+
+        vert_line = DashedLine(
+            self.coords_to_point(point4[0], point4[1]),
+            self.coords_to_point(point4[0], -1*point4[1]),
+            color=RED_E
+        )
+
+        R = Dot(color=RED_E)
+        R.move_to(self.coords_to_point(point4[0], -1*point4[1]))
+        R_label = TextMobject("$3P$", color=RED_E).scale(0.75).next_to(R, RIGHT).set_fill(RED_E).set_color(RED_E).set_stroke(color=RED_E, width=0)
+
+        eqn2 = TextMobject("$P + 2P = 3P$").scale(0.75).next_to(fn_text, DOWN).set_fill(BLACK).set_stroke(BLACK).set_color(BLACK)
+
+        self.play(
+            ShowCreation(vert_line),
+            run_time=.8
+        )
+
+        self.play(
+            FadeOut(vert_line),
+            FadeOut(negR),
+            FadeOut(negR_label),
+            FadeOut(line),
+            ShowCreation(R),
+            Write(R_label),
+            Transform(eqn, eqn2)
         )
 
 

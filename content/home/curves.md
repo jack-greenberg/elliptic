@@ -1,5 +1,5 @@
 +++
-weight = 20
+weight = 3
 +++
 
 {{% section %}}
@@ -171,7 +171,7 @@ $$y = \lambda(x-x_P) + y_P$$
 
 ---
 
-We can solve out the equation by plugging this equation back into the curve equation, eventually giving us an equation for the components of the intersection point:
+We can plug this equation back into the curve equation, eventually giving us an solution for the components of the intersection point:
 
 $$x_R = \lambda^2 - x_P - x_Q$$
 
@@ -189,7 +189,7 @@ This [Desmos graph](https://www.desmos.com/calculator/ialhd71we3) lets you play 
 
 Now that we've seen addition, the next step is _multiplication_.
 
-This doesn't mean multiplying two points together, rather, we mean _scalar multiplication_, meaning adding a point to itself multiple times.
+This doesn't mean multiplying two points together&mdash;rather, we mean _scalar multiplication_, meaning adding a point to itself multiple times.
 
 ---
 
@@ -248,6 +248,50 @@ This doesn't mean multiplying two points together, rather, we mean _scalar multi
 
 ---
 
+{{<slide
+    background-video="PointDouble/00005.mp4"
+    background-position="center"
+    background-size="contain"
+    style="margin: 1em;"
+    background-transition="none"
+    transition="none"
+>}}
+
+---
+
+{{<slide
+    background-video="PointDouble/00006.mp4"
+    background-position="center"
+    background-size="contain"
+    style="margin: 1em;"
+    background-transition="none"
+    transition="none"
+>}}
+
+---
+
+{{<slide
+    background-video="PointDouble/00007.mp4"
+    background-position="center"
+    background-size="contain"
+    style="margin: 1em;"
+    background-transition="none"
+    transition="none"
+>}}
+
+---
+
+{{<slide
+    background-video="PointDouble/00008.mp4"
+    background-position="center"
+    background-size="contain"
+    style="margin: 1em;"
+    background-transition="none"
+    transition="none"
+>}}
+
+---
+
 The method for determining the location of the doubled point is similar to the method of adding, but the main difference is that since we can no longer calculate the "slope" between two points, we instead calculate the derivative at that point:
 
 $$\lambda = \frac{dy}{dx}\Bigr\rvert_{P} = \frac{3x_P^2 + A}{2y_P}$$
@@ -262,7 +306,9 @@ Instead, we use a method called __Double and Add__ to quickly calculate the valu
 
 ---
 
-Let's say we want to do some computation like $dP$, where $d$ is some integer. We can begin by writing out the _binary expansion_ of $d$. Let's take an easy example, like $d=43$:
+Let's say we want to do some computation like $dP$, where $d$ is some integer.
+We can begin by writing out the _binary expansion_ of $d$.
+Let's take an easy example, like $d=43$:
 
 $$43 = 2^{5} + 2^{3} + 2^{1} + 2^{0}$$
 
@@ -272,7 +318,9 @@ In order to compute $dP = 43p$, we can rewrite our expression as:
 
 $$43P = (2^{5} + 2^{3} + 2^{1} + 2^{0})P = 2^5P + 2^3P + 2^1P + 2^0P$$
 
-So we can begin with $2^0P = P$. We double it to get $2P$, and we add it to $P$. We then double twice more to get $8P$, and add it again, and again with $32P$, and after we add it to our sum, we are left with $43P$.
+So we can begin with $2^0P = P$.
+We double it to get $2P$, and we add it to $P$.
+We then double twice more to get $8P$, and add it again, and again with $32P$, and after we add it to our sum, we are left with $43P$.
 
 ---
 
