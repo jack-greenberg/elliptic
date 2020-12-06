@@ -1,4 +1,12 @@
-You made it to the end! Thank you so much for taking a look through this site, we hope you learned a lot.
++++
+weight = 99
++++
+
+# The End
+
+<br>
+
+Thank you so much for taking a look through this site, we hope you learned a lot.
 
 We had a great time learning about this topic, and we're excited to share our learning with the rest of the world.
 
@@ -8,7 +16,7 @@ We had a great time learning about this topic, and we're excited to share our le
 
 ---
 
-This site was created by [Jack Greenberg](https://www.jackgreenberg.co), Oscar De La Garza, and Nabih Estefan.
+This site was created by [Jack Greenberg](https://www.jackgreenberg.co), [Oscar De La Garza](https://github.com/OscarDeGar/), and [Nabih Estefan](https://github.com/nabihestefan).
 
 The project was a final for MTH3110 (Discrete Math) taught by Dr. Sarah Spence Adams.
 

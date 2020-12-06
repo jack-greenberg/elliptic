@@ -48,4 +48,7 @@ Use the `<esc>` key to Zoom out and see all the slides.
 
 ---
 
-## Let's dive in...
+## Let's dive in
+
+<br>
+We'll start with some background
