@@ -41,8 +41,8 @@ _These are some sources we found helpful along the way. Credit where credit is d
 
 - [Implementing Curve25519/X25519: A Tutorial on Elliptic Curve Cryptography &mdash; Martin Kleppmann](https://martin.kleppmann.com/papers/curve25519.pdf)
 - [Elliptic Curve Cryptograph: a gentle introduction &mdash; Andrea Corbellini](https://andrea.corbellini.name/2015/05/17/elliptic-curve-cryptography-a-gentle-introduction/)
-- [Diffie-Hellman Key Exchange &mdash; Kirby A. Baker] (https://www.math.ucla.edu/~baker/40/handouts/rev_DH/node1.html/)
-- [What is the Diffie–Hellman key exchange and how does it work? &mdash; Josh Lake] (https://www.comparitech.com/blog/information-security/diffie-hellman-key-exchange/)
+- [Diffie-Hellman Key Exchange &mdash; Kirby A. Baker](https://www.math.ucla.edu/~baker/40/handouts/rev_DH/node1.html/)
+- [What is the Diffie–Hellman key exchange and how does it work? &mdash; Josh Lake](https://www.comparitech.com/blog/information-security/diffie-hellman-key-exchange/)
 
 ---
 
