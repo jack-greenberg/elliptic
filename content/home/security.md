@@ -25,13 +25,82 @@ Lets say Alice and Bob want to exchange information by encrypting it using the D
 
 We are going visualize these as colors in a paint can to see how they each use they keys, but take into account these are integers in real life, and they are normally extremely big.
 
+
 ---
 
 {{<slide
-    background-video="DHKeyExchange.mp4"
+    background-video="DHKeyExchange/0001.mp4"
+    background-position="center"
+    background-size="contain"
+    background-transition="none"
+    style="margin: 1em;"
+    transition="none"
+>}}
+
+---
+
+{{<slide
+    background-video="DHKeyExchange/0002.mp4"
     background-position="center"
     background-size="contain"
     style="margin: 1em;"
+    background-transition="none"
+    transition="none"
+>}}
+
+---
+
+{{<slide
+    background-video="DHKeyExchange/0003.mp4"
+    background-position="center"
+    background-size="contain"
+    style="margin: 1em;"
+    background-transition="none"
+    transition="none"
+>}}
+
+---
+
+{{<slide
+    background-video="DHKeyExchange/0004.mp4"
+    background-position="center"
+    background-size="contain"
+    style="margin: 1em;"
+    background-transition="none"
+    transition="none"
+>}}
+
+---
+
+{{<slide
+    background-video="DHKeyExchange/0005.mp4"
+    background-position="center"
+    background-size="contain"
+    style="margin: 1em;"
+    background-transition="none"
+    transition="none"
+>}}
+
+---
+
+{{<slide
+    background-video="DHKeyExchange/0006.mp4"
+    background-position="center"
+    background-size="contain"
+    style="margin: 1em;"
+    background-transition="none"
+    transition="none"
+>}}
+
+---
+
+{{<slide
+    background-video="DHKeyExchange/0007.mp4"
+    background-position="center"
+    background-size="contain"
+    style="margin: 1em;"
+    background-transition="none"
+    transition="none"
 >}}
 
 ---
