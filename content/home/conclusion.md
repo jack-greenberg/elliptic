@@ -1,6 +1,19 @@
 +++
 weight = 99
 +++
+# Tying it together
+You may be asking now that we have gone through all of this, how exactly do all these components relate and work together?
+
+---
+
+## ECC & D-H Key Exchange
+We know that from D-H Key Exchange both parties can get a private key, known only to the people communicating. We call this key "K".   
+We also saw how, if we have a starting point P in a curve, we can, through point operation, to another point in the same curve.  
+
+“K” is actually the parameter that tells us how many times to do the defined dot operation on the elliptic curve.
+
+And since getting the new point, __and__ getting "K" is close to impossible, getting the final result of the ECC with D-H Key Exchange is also __practically impossible__.
+---
 
 # The End
 
