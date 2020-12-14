@@ -5,7 +5,7 @@ weight = 3
 {{% section %}}
 
 ## Elliptic Curves
-
+An Elliptic Curve is a smooth, algebraic curve given by an equation of the form   
 $$y^2 = x^3 + Ax + B$$
 
 ---
@@ -73,6 +73,12 @@ $$y^2 = x^3 + Ax^2 + x$$
 
 ---
 
+### Uses
+
+One of the major uses of Elliptic Curves is Cryptography. In the next slides you will see why its used in cryptography and some examples of real world curves and their specific uses.
+
+---
+
 ### Examples
 
 __Bitcoin__ uses a curve called [secp256k1](https://en.bitcoin.it/wiki/Secp256k1). The equation looks like
@@ -87,10 +93,12 @@ Many major messaging services including __Whatsapp__ and __Signal__ use a curve 
 The equation of the curve is too big to show here.
 
 ---
+## Point Groups
+An Elliptic Curve creates a group of points, and as explained in Abelian Groups, this means that there is an operation using points P and Q to get point R. Since this other point is still on the curve, the process can be repeated multiple times. The way this is done in an Elliptic Curve is the following:
 
+---
 ## Point Addition
 
-Remember that the set of points on our curve form a group, so the result of any operation on two of those points must be a point on the curve.
 
 When adding two points together, we draw a straight line between the two points, find the _third_ point at which they intersect, and then reflect that across the horizontal axis...
 
@@ -152,12 +160,17 @@ When adding two points together, we draw a straight line between the two points,
 ---
 
 {{% section %}}
+### Crossroads
+
+If you want to know how this process looks mathematically, go down 🔽
+
+If not you can continue right ▶️
+
+---
 
 #### Addition, mathematically
 
 When adding two points, $P = (x_P, y_P)$ and $Q = (x_Q, y_Q)$, we write their sum as $P + Q = R = (x_R, y_R)$.
-
-🔽
 
 ---
 
@@ -186,6 +199,7 @@ This [Desmos graph](https://www.desmos.com/calculator/ialhd71we3) lets you play 
 ---
 
 {{<slide transition="fade-in none">}}
+### Other Operations
 
 Now that we've seen addition, the next step is _multiplication_.
 
@@ -291,21 +305,32 @@ This doesn't mean multiplying two points together&mdash;rather, we mean _scalar 
 >}}
 
 ---
+{{% section %}}
+### Crossroads
+
+If you want to know how this process looks mathematically, go down 🔽
+
+If not you can continue right ▶️
+
+---
 
 The method for determining the location of the doubled point is similar to the method of adding, but the main difference is that since we can no longer calculate the "slope" between two points, we instead calculate the derivative at that point:
 
 $$\lambda = \frac{dy}{dx}\Bigr\rvert_{P} = \frac{3x_P^2 + A}{2y_P}$$
 
 The other two formulae are the same.
+{{% /section %}}
 
 ---
-
+### Simplifying Multiplication
 If we wanted to continue do a big point multiplication, like $48798273P$, the method of adding P to itself over and over can get _very_ slow.
 
 Instead, we use a method called __Double and Add__ to quickly calculate the value.
 
 ---
+{{% section %}}
 
+### Binary Expansion
 Let's say we want to do some computation like $dP$, where $d$ is some integer.
 We can begin by writing out the _binary expansion_ of $d$.
 Let's take an easy example, like $d=43$:
@@ -313,14 +338,15 @@ Let's take an easy example, like $d=43$:
 $$43 = 2^{5} + 2^{3} + 2^{1} + 2^{0}$$
 
 ---
-
+### Example
 In order to compute $dP = 43p$, we can rewrite our expression as:
 
 $$43P = (2^{5} + 2^{3} + 2^{1} + 2^{0})P = 2^5P + 2^3P + 2^1P + 2^0P$$
 
-So we can begin with $2^0P = P$.
-We double it to get $2P$, and we add it to $P$.
-We then double twice more to get $8P$, and add it again, and again with $32P$, and after we add it to our sum, we are left with $43P$.
+So we can begin with $2^0P = P$.   
+We double it to get $2P$, and we add it to $P$.   
+We then double twice more to get $8P$, and add it again, and again with $32P$, and after we add it to our sum, we are left with $43P$.   
+{{% /section %}}
 
 ---
 
@@ -330,12 +356,16 @@ We then double twice more to get $8P$, and add it again, and again with $32P$, a
 <small>Bringing it back to cryptography.</small>
 
 ---
+#### Discrete Logarithm Problem
 
 If I gave you some point $X$, which I computed _secretly_ by doing $dP$, and $P$, could you tell me what $d$ is?
 
 This problem is known as the _discrete logarithm problem_, and it is the crux of the secureness of elliptic curve cryptography.
 
+Think back to the graph when we explained Point Multiplication. If I gave you 3P, and called the point X. Would you be able to tell me that d = 3?
+
 ---
+#### Discrete Logarithm Problem
 
 The reason __ECC__ is secure is that there are no _known_ methods for efficiently solving $X = dP$ for $d$.
 

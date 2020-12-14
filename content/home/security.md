@@ -104,11 +104,12 @@ We are going visualize these as colors in a paint can to see how they each use t
 >}}
 
 ---
+### Breaking the Key
 
 Lets say we have a third person Carlos, that doesn't know any private keys, only the public ones. This means they know the base and mod *g & p*, and both public keys *A & B*. This means that Carlos doesnt know any of *a, b* or *K*. If Carlos were able to get any of these 3 secret keys, then they would be able to calculate *K* the shared private key with which the message are encrypted.
 
 ---
-
+### Real-life Restrictions
 These private keys can technically be calculated if *g & p* are not chosen properly. Normally, *p* is a __prime number__ of a __large magnitude__ with *g* being a __coprime__ to *p-1*. The final key is also normally 256 bits long.
 
 These characteristics make it practically impossible for a third person to calculate *K* after its been established, making it extremely safe.
