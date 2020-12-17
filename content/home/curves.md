@@ -144,8 +144,7 @@ When adding two points together, we draw a straight line between the two points,
     background-video="PointAddition/00004.mp4"
     background-position="center"
     background-size="contain"
-    style="margin: 1em;"
-    transition="none"
+    style="margin: 1em;" transition="none"
     background-transition="none"
 >}}
 
@@ -324,6 +323,55 @@ We then double twice more to get $8P$, and add it again, and again with $32P$, a
 
 ---
 
+## Galois Fields
+
+Now we'll tie things back into the concept of groups.
+
+The curves you've seen so are are defined over the plane of real numbers, so there are an infinite number of points that lie on the curve.
+
+<br>
+
+In __ECC__, we define curves over a [finite field](https://en.wikipedia.org/wiki/Finite_field), or _Galois field_.
+The field is most commonly defined over the integers $\text{mod } p$ ($\mathbb{Z}_p$ or $GF(p)$), where $p$ is a prime number.
+
+---
+
+We will now modify our understanding of elliptic curves to fit in this new finite paradigm.
+
+Previously, our set of points was
+
+$$E = \\{(x,y) \in \mathbb{R}^2;  y^2 = x^3 + Ax + B\\}$$
+
+Now, we will define our curve over a Galois Field:
+
+$$E = \\{(x,y) \in \mathbb{Z}_p; y^2 \equiv x^3 + Ax + B\pmod{p} \\} \cup \\{\infty\\}$$
+
+---
+
+### The Point at Infinity
+
+<br>
+
+$$E = \\{(x,y) \in \mathbb{Z}_p; y^2 \equiv x^3 + Ax + B\pmod{p} \\} \cup \\{\infty\\}$$
+
+$\\{\infty\\}$ is a special element in the set that is called the _point at infinity_.
+This point has no coordinates, and helps us deal with things like vertical lines.
+
+It also serves as the _identity element_ of our group. So we can define the identity property as:
+
+$$P \bullet \infty = \infty \bullet P = P \text{ for all } P \in E$$
+
+---
+
+It helps to consider what would happen if we add $P$ to $-P$.
+
+<img src="PointAtInfinity.png" style="border:none; box-shadow: none" />
+
+On our graph, we would be adding two points that have the same x-coordinate, and so we would draw a vertical line.
+So their intersection point would be the point at infinity.
+
+---
+
 ## Discrete Logarithm Problem
 
 <br>
@@ -341,13 +389,3 @@ The reason __ECC__ is secure is that there are no _known_ methods for efficientl
 
 <br>
 <small>Just because there are no known methods doesn't mean that one will eventually be discovered. That would be <em>bad</em> news.</small>
-
----
-
-## Galois Fields
-
-The curves you've seen so are are defined over the plane of real numbers.
-So there are an infinite number of points that lie on the curve.
-
-In ECC, we define curves over a [finite field](https://en.wikipedia.org/wiki/Finite_field), or _Galois field_.
-The field is most commonly defined over the integers $\mod p$, where $p$ is a prime number. We generally write it as $(\mathbb{Z}_P, +\cdot)$.
