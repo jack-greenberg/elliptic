@@ -30,7 +30,7 @@ We had a great time learning about this topic, and we're excited to share our le
 
 ---
 
-This site was created by [Jack Greenberg](https://www.jackgreenberg.co), [Oscar De La Garza](https://github.com/OscarDeGar/), and [Nabih Estefan](https://github.com/nabihestefan).
+This site was created by [Jack Greenberg](https://www.jackgreenberg.co), [Oscar De La Garza](https://github.com/OscarDeGar/), and [Nabih Estefan](https://nabihestefan.github.io).
 
 The project was a final for MTH3110 (Discrete Math) taught by Dr. Sarah Spence Adams.
 
